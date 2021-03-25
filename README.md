@@ -1,8 +1,7 @@
 ## usersテーブル
   |Column             |Type   |Options     | 
   |-------------------|-------|------------|
-  |last_name          |string |null: false |
-  |first_name         |string |null: false |
+  |user_name          |string |null: false |
   |encrypted_password |string |null: false |
 ### Association
   has_many :items
