@@ -1,24 +1,43 @@
-# README
+## usersテーブル
+  |Column             |Type   |Options     | 
+  |-------------------|-------|------------|
+  |last_name          |string |null: false |
+  |first_name         |string |null: false |
+  |encrypted_password |string |null: false |
+### Association
+  has_many :items
+  has_many :item_confirmations
+  has_many :shift_hopes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## itemsテーブル
+  |Column           |Type       |Options          |
+  |-----------------|-----------|-----------------|
+  |name             |string     |null: false      |
+  |text             |text       |null: false      |
+  |user             |references |foreign_key: true|
+  |stock_id         |integer    |null: false      |
+  |storage_location |string     |null: false      |
+  |deployment       |string     |null: false      |
+  |arrival_day      |integer    |null: false      |
+### Association
+  belongs_to :user
+  has_one :item_confirmation
 
-Things you may want to cover:
+## item_confirmationsテーブル
+  |Column        |Type        |Options          |
+  |--------------|------------|-----------------|
+  |confirmation1 |string      |null: false      |
+  |confirmation2 |string      |null: false      |
+  |user          ｜references |foreign_key: true|
+## Association
+  belongs_to :user
+  belongs_to :item
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## shift_hopesテーブル
+  |Column    |Type       |Options          |
+  |----------|-----------|-----------------|
+  |hope_day  |string     |null: false      |
+  |hope_time |integer    |null: false      |
+  |user      |references |foreign_key: true|
+## Association
+  belong_to :user
