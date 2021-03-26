@@ -1,0 +1,238 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 以下トップページ */
+.header{
+  background-image: url("/images/header.png");
+  height: 160px;
+}
+
+.header_room{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  position: relative;
+}
+
+h3{
+  font-size: 30px;
+  font-weight: 900; 
+  color: aliceblue;
+  text-shadow:1px 0 5px black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: underline palevioletred;
+}
+
+h4{
+  color: aliceblue;
+  text-shadow:1px 0 5px black;
+  text-align: center;
+  text-decoration : underline red; 
+}
+
+.select_button{
+  position: absolute;
+  top: 100px;
+  right: 10px
+}
+
+.user_name a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+.log_out a {
+  font-size: 12px;
+  border: 0;
+  padding: 10px;
+  color: black;
+  background-color: blanchedalmond;
+  text-decoration: none;
+}
+
+.food{
+  color: orange;
+}
+
+.new_item_room{
+  height: 600px;
+  position: relative;
+}
+
+.page-head{
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.search-form {
+  width: 200px;
+  height: 25px;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 200px;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  cursor: pointer;
+  background-color: #3ccace;
+  padding: 8px;
+}
+
+.search-icon{
+  height: 15px;
+  width: 15px
+}
+
+.new_item_btn{
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  color: white;
+  background-color: red;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.new_item_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.new_item{
+  width: calc((70% - 20px) / 3);
+  margin: 10px;
+}
+
+.new_item_image{
+  width: 200px;
+  height: 200px;
+}
+
+.calendar{
+  height: 600px;
+  background-image: url("/images/calender_back.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calender_image{
+  width: 90%;
+  height: 500px;
+}
+
+.shift_hopes{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.shift_text{
+  text-decoration : underline red;
+  position: absolute;
+  top: 35px;
+  left: 40%;
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+
+  .header{
+    height: 140px;
+  }
+
+  h4{
+    font-size: 10px;
+  }
+  
+  .select_button{
+    position: absolute;
+    top: 80px;
+    right: 5px
+  }
+
+  .user_name a {
+    font-size: 10px;
+  }
+  
+  .log_out a {
+    font-size: 10px;
+    padding: 7px;
+  }
+
+  .new_item_room{
+    height: 500px;
+  }
+
+  .page-head{
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .search-form {
+    width: 150px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 120px;
+  }
+
+  .new_item_btn{
+    font-size: 10px;
+    position: absolute;
+    top: 5px;
+  }
+
+  .arrival_day{
+    font-size: 5px;
+  }
+
+  .new_item_image{
+    width: 100px;
+    height: 100px;
+  }
+
+  .new_item_name{
+    font-size: 10px;
+  }
+
+  .new_item{
+    width: calc((100% - 10px) / 4);
+  }
+
+  .calendar{
+    height: 400px;
+  }
+
+  .shift_hopes{
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 5px;
+    left: 30%;
+  }
+
+  .shift_text{
+    text-decoration : underline red;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+  }
+
+  .calender_image{
+    width: 90%;
+    height: 280px;
+  }
+
+}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* 以下新規登録、ログイン*/
 .container {
   background-image: url("/images/kitchen.png");
@@ -37,4 +41,9 @@ h2{
   margin-left: auto;
   margin-right: auto;
   width: 8em
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+
 }
