@@ -52,6 +52,7 @@ h4{
   color: black;
   background-color: blanchedalmond;
   text-decoration: none;
+  border-radius: 25px;
 }
 
 .food{
@@ -64,9 +65,9 @@ h4{
 }
 
 .page-head{
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 900;
-  margin-left: 10px;
+  margin: 10px 5px 0px 0px;
 }
 
 .search-form {
@@ -74,7 +75,7 @@ h4{
   height: 25px;
   display: flex;
   position: absolute;
-  top: 15px;
+  top: 10px;
   left: 200px;
 }
 
@@ -94,12 +95,13 @@ h4{
 .new_item_btn{
   font-size: 20px;
   position: absolute;
-  top: 12px;
+  top: 5px;
   right: 10px;
   color: white;
   background-color: red;
   text-decoration: none;
   padding: 5px 10px;
+  border-radius: 30px;
 }
 
 .new_item_wrapper{
