@@ -6,13 +6,6 @@
   position: relative;
 }
 
-.information_input{
-  font-size: 20px;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
-}
-
 .new_item_room2{
   background-color: #FFF;
   width: 70%;
@@ -20,8 +13,15 @@
   padding: 5vh 15vw;
 }
 
+.information_input{
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
 // 共通 
-.weight_bold_text {
+.weight_bold_text{
   font-weight: bold;
   min-width: 170px;
   margin-bottom: 10px;
@@ -129,4 +129,33 @@
   text-decoration: none;
   position: relative;
   top: 25px;
+}
+
+//スマホ表示時
+@media (max-width: 599px) {
+
+  .new_item_room2{
+    width: 85%;
+    height: 90%;
+    padding: 5vh 10vw;
+  }
+
+  .information_input{
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .weight_bold_text {
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  .click_upload>p {
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .select-box{
+    width: 100%;
+  }
 }
