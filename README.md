@@ -15,7 +15,7 @@
   |text             |text       |null: false      |
   |user             |references |foreign_key: true|
   |stock_id         |integer    |null: false      |
-  |storage_location |string     |null: false      |
+  |storage_location |string
   |deployment       |string     |null: false      |
   |arrival_day      |integer    |null: false      |
 ### Association
