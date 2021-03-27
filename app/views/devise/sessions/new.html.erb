@@ -3,7 +3,6 @@
     <h1>おかえりなさい</h1>
     <h2>下記を入力してログインしましょう</h2>
     <%= form_with model: @user, url: user_session_path, class: 'new_user', local: true do |f| %>
-     
       <div class="field">
         <%= f.label :メールアドレス, class: 'user_data' %><br />
         <%= f.email_field :email, autofocus: true %>

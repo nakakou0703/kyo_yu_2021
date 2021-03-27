@@ -5,11 +5,22 @@
     <h4>試してみたくなる、そんなこだわりの<span class="food">『食』</span>の専門店~</h4>
   </div>
   <div class="select_button">
-    <div class="user_name">
-      <a href="#">nakamura</a>
-    </div>
-    <div class="log_out">
-      <a href="#">ログアウト</a>
-    </div>
+    <% if user_signed_in? %>
+      <div class="user_name">
+        <%= link_to "#{current_user.user_name}", user_path(current_user.id) %>
+      </div>
+      <div class="log_out">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+    <% else %>
+      <div class="new_user_form">
+        <div class="user_log_in">
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+        <div class="user_registrations">
+          <%= link_to "新規登録", new_user_registration_path %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
