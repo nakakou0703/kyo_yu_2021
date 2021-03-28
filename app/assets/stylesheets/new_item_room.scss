@@ -36,13 +36,6 @@
   font-size: 12px;
   font-weight: bold;
 }
-
-.select-box {
-  height: 25px;
-  width: 30%;
-  background-color: #f5f5f5;
-  padding-left: 15px;
-}
 // 共通 
 
 // 商品画像 
@@ -77,6 +70,13 @@
 .stock_id_form{
   margin-top: 2vh;
 }
+
+.select_box1 {
+  height: 25px;
+  width: 30%;
+  padding-left: 15px;
+}
+
 .storage_location_form{
   margin-top: 2vh;
 }
@@ -101,6 +101,10 @@
 
 .arrival_day_form{
   margin-top: 2vh;
+}
+
+.select_box2 {
+  width: 50%;
 }
 
 //下部ボタン

@@ -10,46 +10,17 @@
       </form>
       <%= link_to "新商品登録", new_item_path, class: "new_item_btn" %>
       <div class="new_item_wrapper">
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
-        <div class="new_item">
-          <div class="arrival_day" >入荷日</div>
-          <img src="./images/item.png" alt="" class="new_item_image" />
-          <div class="new_item_name">新商品名</div>
-        </div>
+        <% @items.each do |item| %>
+          <div class="new_item">
+            <div class="arrival_day" >
+              <%= item.arrival_day %>
+            </div>
+            <%= image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+            <div class="new_item_name">
+              <%= item.name %>
+            </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
