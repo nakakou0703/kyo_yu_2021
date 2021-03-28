@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer     :stock_id,        null: false
       t.string      :storage_location
       t.string      :deployment,      null: false
-      t.integer     :arrival_day,     null: false
+      t.date        :arrival_day,     null: false
       t.timestamps
     end
   end
