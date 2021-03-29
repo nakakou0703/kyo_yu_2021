@@ -15,10 +15,12 @@
             <div class="arrival_day" >
               <%= item.arrival_day %>
             </div>
-            <%= image_tag item.image, class: 'new_item_image' if item.image.attached? %>
-            <div class="new_item_name">
-              <%= item.name %>
-            </div>
+            <%= link_to item_path(item.id) do %>
+              <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+              <div class="new_item_name">
+                <%= item.name %>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
