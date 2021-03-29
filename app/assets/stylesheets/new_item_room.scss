@@ -7,6 +7,7 @@
 }
 
 .new_item_room2{
+  margin: 20px;
   background-color: #FFF;
   width: 70%;
   height: 90%;
@@ -31,7 +32,7 @@
   background: #ea352d;
   margin-left: 8px;
   padding: 3px;
-  border-radius: 2px;
+  border-radius: 2px;  //角を丸くする
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -111,6 +112,7 @@
 .registration_contents{
   text-align: center;
   margin-top: 2vh;
+  padding: 10px;
   position: relative;
 }
 
