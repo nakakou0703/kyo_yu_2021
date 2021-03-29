@@ -7,21 +7,18 @@
 }
 
 .show_item_room2{
+  text-align: center;
   margin: 20px 0px;
   background-color: #FFF;
   width: 70%;
   height: 90%;
   padding: 5vh 15vw;
-  position: relative;
 }
 
 .show_item_image{
   text-align: center;
   height: 400px;
   width: 400px;
-  border: 1px solid black;
-  position: relative;
-  margin: auto;
 }
 
 .show_item_name{
@@ -61,11 +58,35 @@ td{
 }
 
 .button{
-  border: 1px solid red;
-  background-color: red;
+  border: 1px solid rgb(87, 209, 87);
+  background-color: rgb(87, 209, 87);
   color: white;
   padding: 10px 20px;
   border-radius: 30px;  //角を丸く
+}
+
+.edit_delete_button{
+  margin-top: 5%;
+  padding: 0px 23%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_button{
+  background: red;
+  border: 1px solid red;
+  color: #fff;
+  padding: 15px 20%;
+  text-decoration: none;
+}
+
+.delete_button{
+  background: red;
+  border: 1px solid red;
+  color: #fff;
+  padding: 15px 20%;
+  text-decoration: none;
+  margin-top: 5%;
 }
 
 .back_button{
@@ -76,7 +97,7 @@ td{
   border-radius: 20px;
   text-decoration: none;
   position: relative;
-  top: 25px;
+  top: 10px;
 }
 
 //スマホ表示時
@@ -101,6 +122,14 @@ td{
   th,td{    //ブレイクポイントで横並びから縦並びへ
     display: block;
     width: 100%;
+  }
+
+  .edit_button{
+    padding: 10px 20%;
+  }
+
+  .delete_button{
+    padding: 10px 20%;
   }
 
   .back_button{
