@@ -1,0 +1,49 @@
+<div class="show_item_room1">
+  <%# <h1>こととや</h1> %>
+  <div class="show_item_room2">
+    <div class="information_input">新商品の詳細</div>
+    <div class="show_item_image">
+      aaa
+      <%# image_tag @item.image %>
+    </div>
+    <div class="show_item_name">
+      aaa
+      <%# @item.name %>
+    </div>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th class="show_item_table1">商品詳細</th>
+          <td class="show_item_table2">wegrfhknvewkjvgiwいうifbskvz、xmcksjヴェhfkjdんvkDBvkhfvsbfvdsfkへfvbsdkjヴェイgべksjbvkjsgh毛sjんbkせhびksefdjej,fv<%# @item.text %></td>
+        </tr>
+        <tr>
+          <th class="show_item_table1">在庫の有無</th>
+          <td class="show_item_table2">aaaaaa<%# @item.stock_id %></td>
+        </tr>
+        <tr>
+          <th class="show_item_table1">在庫場所</th>
+          <td class="show_item_table2">aaaaaa<%# @item.storage_location %></td>
+        </tr>
+        <tr>
+          <th class="show_item_table1">展開場所</th>
+          <td class="show_item_table2">aaaaaa<%# @item.deployment %></td>
+        </tr>
+        <tr>
+          <th class="show_item_table1">入荷日</th>
+          <td class="show_item_table2">2030-01-01<%# @item.arrival_day %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="verification_button">
+      <div class="button">
+        Webで確認
+      </div>
+      <div class="button">
+        実際に確認
+      </div>
+    </div>
+    <div class="registration_contents">
+      <%=link_to 'もどる', root_path, class:"back_button" %>
+    </div>
+  </div>
+</div>
