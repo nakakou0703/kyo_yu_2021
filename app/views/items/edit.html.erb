@@ -1,0 +1,65 @@
+<div class="new_item_room1">
+  <div class="new_item_room2">
+    <div class="information_input">商品の情報を編集</div>
+    <%= form_with(model: @item, local: true) do |form| %>
+
+      <%# 商品画像  %>
+      <div class="image_upload">
+        <div class="weight_bold_text">
+          商品画像
+        </div>
+        <p>(選択しなくても編集可能。その場合以前の画像がそのまま使用されます。)</p>
+        <%= form.file_field :image, class: "item_image" %>
+      </div>
+
+      <%# 商品名・商品説明 %>
+      <div class="new_item_form">
+        <div class="weight_bold_text">
+          商品名
+          <span class="mandatory">必須</span>
+        </div>
+        <%= form.text_area :name, class:"new_item_text", placeholder:"商品名（必須 50文字まで)", maxlength:"50" %>
+        <div class="item_explain_form">
+          <div class="weight_bold_text">
+            商品の説明
+            <span class="mandatory">必須</span>
+          </div>
+          <%= form.text_area :text, class:"new_item_text", placeholder:"商品の説明（必須 1,000文字まで）（例）愛知県産のデラうまの、なんか色々使っていて美味しいよーん。しかも無添加。" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+      </div>
+      <%# 在庫・展開場所・入荷日 %>
+      <div class="stock_id_form">
+        <div class="weight_bold_text">
+          在庫の有無
+          <span class="mandatory">必須</span>
+        </div>
+        <%= form.collection_select(:stock_id, Stock.all, :id, :name, {}, {class:"select_box1", id:"item-category"}) %> 
+      </div>
+      <div class="storage_location_form">
+        <div class="weight_bold_text">
+           在庫の場所
+        </div>
+        <%= form.text_area :storage_location, class:"storage_location", placeholder:"分かりやすい様に書いてねー" %>
+      </div>
+      <div class="deployment_form">
+        <div class="weight_bold_text">
+          展開場所（陳列した場所）
+          <span class="mandatory">必須</span>
+        </div>
+        <%= form.text_area :deployment, class:"deployment", placeholder:"ざっくりでいいよー（例）調味料・乾物など" %>
+      </div>
+      <div class="arrival_day_form">
+        <div class="weight_bold_text">
+          入荷日
+          <span class="mandatory">必須</span>
+        </div>
+        <%= form.date_field :arrival_day, class:"select_box2" %>
+      </div>
+      <%# 下部ボタン %>
+      <div class="registration_contents">
+        <%= form.submit "編集した内容を登録する" ,class:"registration_btn" %>
+        <%=link_to 'もどる', root_path, class:"back_btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="edit_delete_button">
-      <%= link_to "編集する", "#", class:"edit_button" %>
+      <%= link_to "編集する", edit_item_path(@item.id), class:"edit_button" %>
       <%= link_to item_path(@item.id), method: :delete, class:"delete_button",data:
        { confirm: '本当に削除しますか？',
         cancel: 'やめる',
