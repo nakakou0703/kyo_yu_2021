@@ -1,0 +1,57 @@
+.search_item_room1{
+  background-color: burlywood;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.search_item_room2{
+  text-align: center;
+  margin: 20px 0px;
+  background-color: #FFF;
+  width: 70%;
+  height: 90%;
+  padding: 5vh 15vw;
+}
+
+.search_item_input{
+  height: 30px;
+  width: 70%;
+}
+
+.search_item_button{
+  background-color: lightskyblue;
+  border: 1px solid lightskyblue;
+  color: #FFF;
+  border-radius: 30px;  //角を丸く
+  padding: 3px 15px;
+}
+
+.search_item{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;  //複数行に
+}
+
+.search_new_item{
+  width: calc((100% - 30px) / 2);
+  margin-top: 10%;
+}
+
+
+//スマホ表示時
+@media (max-width: 599px) {
+
+  .search_item_input{
+    height: 30px;
+    width: 100%;
+  }
+
+  .search_item_button{
+    padding: 3px 30%;
+    margin-top: 5%;
+  }
+
+}
