@@ -1,0 +1,26 @@
+<div class="search_item_room1">
+  <div class="search_item_room2">
+    <%= form_with(url: search_items_path, local: true, method: :get) do |form| %>
+      <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search_item_input" %>
+      <%= form.submit "検索", class: "search_item_button" %>
+    <% end %>
+    <div class="search_item">
+      <% @items.each do |item| %>
+        <div class="search_new_item">
+          <div class="arrival_day" >
+            <%= item.arrival_day %>
+          </div>
+          <%= link_to item_path(item.id) do %>
+            <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+            <div class="new_item_name">
+              <%= item.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="registration_contents">
+      <%=link_to 'もどる', root_path, class:"back_button" %>
+    </div>
+  </div>
+</div>

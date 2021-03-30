@@ -13,5 +13,14 @@ class Item < ApplicationRecord
     validates :arrival_day
   end
   validates :stock_id, numericality: { other_than: 1 }
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?) or text LIKE(?) or arrival_day LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      Item.all.order("created_at DESC").limit(10)
+    end
+  end
+
 end
 
