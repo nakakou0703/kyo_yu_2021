@@ -5,7 +5,8 @@
   |encrypted_password |string |null: false |
 ### Association
   has_many :items
-  has_many :item_confirmations
+  has_many :web_confirmations
+  has_many :local_confirmations
   has_many :shift_hopes
 
 ## itemsテーブル
@@ -20,14 +21,23 @@
   |arrival_day      |integer    |null: false      |
 ### Association
   belongs_to :user
-  has_one :item_confirmation
+  has_many :web_confirmations
+  has_many :local_confirmations
 
-## item_confirmationsテーブル
-  |Column        |Type        |Options          |
-  |--------------|------------|-----------------|
-  |confirmation1 |string      |null: false      |
-  |confirmation2 |string      |null: false      |
-  |user          ｜references |foreign_key: true|
+## web_confirmationテーブル
+  |Column      |Type       |Options          |
+  |------------|-----------|-----------------|
+  |user        |references |foreign_key: true|
+  |item        |references |foreign_key: true|
+## Association
+  belongs_to :user
+  belongs_to :item
+
+## local_confirmationテーブル
+  |Column      |Type       |Options          |
+  |------------|-----------|-----------------|
+  |user        |references |foreign_key: true|
+  |item        |references |foreign_key: true|
 ## Association
   belongs_to :user
   belongs_to :item

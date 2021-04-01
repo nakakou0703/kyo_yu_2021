@@ -1,4 +1,5 @@
 <div class="show_item_room1">
+
   <div class="show_item_room2">
     <div class="information_input">新商品の詳細</div>
     <%= image_tag @item.image, class: 'show_item_image' %>
@@ -29,14 +30,34 @@
         </tr>
       </tbody>
     </table>
-    <div class="verification_button">
-      <div class="button">
-        Webで確認
+
+    <div class="confirmation_room">
+      <div class="confirmation_button">
+        <div class="button">
+          <% if @item.liked_by?(current_user) %>
+            <div id="confirmed">・確認済</div>
+            <div id="confirmed_list1">・確認者リスト</div>
+          <% else %>
+            <%= link_to "・webで確認", item_web_confirmations_path(item_id: @item.id), method: :post, remote: true, id: @item.id, class: 'confirmation_button1', id: "confirmed1" %>
+            <div id="confirmed_list1">・確認者リスト</div>
+          <% end %>
+        </div>
       </div>
+      <ul class="confirmed_lists hidden" id="pull_down">
+        <% @web_confirmations.each do |f| %>
+          <li class="pull_down_list" ><%= f.user.user_name %></li>
+         <% end %>
+      </ul>
       <div class="button">
-        実際に確認
+        ・実際に確認・確認者リスト
       </div>
+     <%# <ul class="confirmed_lists hidden" id="pull_down" >
+        <% @web_confirmations.each do |f| %>
+          <li><%# f.user.user_name %></li>
+        <%# end %>
+      <%# </ul>  %>
     </div>
+
     <div class="edit_delete_button">
       <%= link_to "編集する", edit_item_path(@item.id), class:"edit_button" %>
       <%= link_to item_path(@item.id), method: :delete, class:"delete_button",data:
@@ -46,6 +67,7 @@
         削除する
       <% end %>
     </div>
+
     <div class="registration_contents">
       <%=link_to 'もどる', root_path, class:"back_button" %>
     </div>

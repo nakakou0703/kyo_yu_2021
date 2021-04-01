@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :web_confirmations, only: [:create]
   end
   resources :users, only: [:show, :destroy]
 end

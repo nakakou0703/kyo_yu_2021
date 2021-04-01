@@ -2,6 +2,8 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_many :web_confirmations
+  has_many :users, through: :web_confirmations
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :stock
   
@@ -20,6 +22,10 @@ class Item < ApplicationRecord
     else
       Item.all.order("created_at DESC").limit(10)
     end
+  end
+
+  def liked_by?(user)
+    web_confirmations.where(user_id: user.id).exists?
   end
 
 end
