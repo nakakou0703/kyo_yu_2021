@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   validates :user_name, presence: true
   has_many :items
+  has_many :web_confirmations
+  has_many :items, through: :web_confirmations
+
 end

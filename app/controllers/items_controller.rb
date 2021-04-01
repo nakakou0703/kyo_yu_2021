@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])
+    @web_confirmations = WebConfirmation.where(item_id: params[:id])
   end
 
   def destroy
