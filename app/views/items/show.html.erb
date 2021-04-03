@@ -32,30 +32,41 @@
     </table>
 
     <div class="confirmation_room">
-      <div class="confirmation_button">
+      <div class="confirmation_contents">
         <div class="button">
-          <% if @item.liked_by?(current_user) %>
-            <div id="confirmed">・確認済</div>
-            <div id="confirmed_list1">・確認者リスト</div>
-          <% else %>
-            <%= link_to "・webで確認", item_web_confirmations_path(item_id: @item.id), method: :post, remote: true, id: @item.id, class: 'confirmation_button1', id: "confirmed1" %>
-            <div id="confirmed_list1">・確認者リスト</div>
-          <% end %>
+
+          <%# if @web_confirmation.present? %>
+             <%# <div>・確認済</div> %>
+          <%# else %>
+            <%= link_to "・webで確認", item_web_confirmations_path(item_id: @item.id), method: :post, remote: true, id: @item.id, class: 'confirmation_button', id: "web_confirmed" %>
+          <%# end %>
+          <span style="cursor: hand; cursor:pointer;">  <!--マウスポインターの変更-->
+            <div id="web_confirmed_list">・確認者リスト</div>
+          </span>
         </div>
       </div>
-      <ul class="confirmed_lists hidden" id="pull_down">
+      <ul class="confirmed_lists hidden" id="web_pull_down">
         <% @web_confirmations.each do |f| %>
           <li class="pull_down_list" ><%= f.user.user_name %></li>
-         <% end %>
+        <% end %>
       </ul>
-      <div class="button">
-        ・実際に確認・確認者リスト
+      <div class="confirmation_contents">
+        <div class="button">
+          <%# if @local_confirmation.present? %>
+            <%# <div>・確認済</div> %>
+          <%# else %>
+            <%= link_to "・実際に確認", item_local_confirmations_path(item_id: @item.id), method: :post, remote: true, id: @item.id, class: 'confirmation_button', id: "local_confirmed" %>
+          <%# end %>
+          <span style="cursor: hand; cursor:pointer;">  <!--マウスポインターの変更-->
+            <div id="local_confirmed_list">・確認者リスト</div>
+          </span>
+        </div>
       </div>
-     <%# <ul class="confirmed_lists hidden" id="pull_down" >
-        <% @web_confirmations.each do |f| %>
-          <li><%# f.user.user_name %></li>
-        <%# end %>
-      <%# </ul>  %>
+      <ul class="confirmed_lists hidden" id="local_pull_down">
+        <% @local_confirmations.each do |f| %>
+          <li class="pull_down_list" ><%= f.user.user_name %></li>
+        <% end %>
+      </ul>
     </div>
 
     <div class="edit_delete_button">

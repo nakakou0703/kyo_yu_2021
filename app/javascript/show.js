@@ -1,28 +1,63 @@
 window.addEventListener('load', function(){
 
-  const confirmedList1 = document.getElementById("confirmed_list1")
-  const pullDownParents = document.getElementById("pull_down")
-  const confirmed1 = document.getElementById("confirmed1")
+  //以下webの方の確認・確認者リストボタン
+  const webConfirmedList = document.getElementById("web_confirmed_list")
+  const webPullDownParents = document.getElementById("web_pull_down")
+  const webConfirmed = document.getElementById("web_confirmed")
 
-
-  confirmedList1.addEventListener('mouseover', function(){
+  webConfirmedList.addEventListener('mouseover', function(){
     this.setAttribute("style", "color: red;")
   });
-
-  confirmedList1.addEventListener('mouseout', function(){
+  webConfirmedList.addEventListener('mouseout', function(){
     this.removeAttribute("style", "color: white;")
   });
-
-  confirmedList1.addEventListener('click', function() {
-    if (pullDownParents.getAttribute("style") == "display:block;") {  //プルダウンメニューの表示と非表示の設定
-      pullDownParents.removeAttribute("style", "display:block;")  //表示されている時の実行
+  webConfirmedList.addEventListener('click', function() {
+    if (webPullDownParents.getAttribute("style") == "display:block;") {  //プルダウンメニューの表示と非表示の設定
+      webPullDownParents.removeAttribute("style", "display:block;")  //表示されている時の実行
     } else {
-      pullDownParents.setAttribute("style", "display:block;")  //非表示の時実行
+      webPullDownParents.setAttribute("style", "display:block;")  //非表示の時実行
     }
   });
 
-  confirmed1.addEventListener('click', function() {
-    confirmed1.textContent = '・確認済';
+  webConfirmed.addEventListener('click', function() {
+    this.textContent = '・確認済';
   });
+  webConfirmed.addEventListener('mouseover', function() {
+    this.setAttribute("style", "color: red;")
+  });
+  webConfirmed.addEventListener('mouseout', function(){
+    this.removeAttribute("style", "color: white;")
+  });
+
+
+
+  //以下実際の方の確認・確認者リストボタン
+  const localConfirmedList = document.getElementById("local_confirmed_list")
+  const localPullDownParents = document.getElementById("local_pull_down")
+  const localConfirmed = document.getElementById("local_confirmed")
+  
+  localConfirmedList.addEventListener('mouseover', function(){
+    this.setAttribute("style", "color: red;")
+   });
+   localConfirmedList.addEventListener('mouseout', function(){
+     this.removeAttribute("style", "color: white;")
+   });
+   localConfirmedList.addEventListener('click', function() {
+    if (localPullDownParents.getAttribute("style") == "display:block;") {  //プルダウンメニューの表示と非表示の設定
+      localPullDownParents.removeAttribute("style", "display:block;")  //表示されている時の実行
+    } else {
+      localPullDownParents.setAttribute("style", "display:block;")  //非表示の時実行
+    }
+   });
+
+   localConfirmed.addEventListener('click', function() {
+    this.textContent = '・確認済';
+   });
+   localConfirmed.addEventListener('mouseover', function() {
+    this.setAttribute("style", "color: red;")
+   });
+   localConfirmed.addEventListener('mouseout', function(){
+    this.removeAttribute("style", "color: white;")
+   });
 
 });
