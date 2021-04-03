@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :user_name, presence: true
+
   has_many :items
   has_many :web_confirmations
   has_many :items, through: :web_confirmations
+  has_many :local_confirmations
+  has_many :items, through: :local_confirmations
 
 end

@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   has_one_attached :image
   has_many :web_confirmations
   has_many :users, through: :web_confirmations
+  has_many :local_confirmations
+  has_many :users, through: :local_confirmations
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :stock
   
@@ -24,9 +26,10 @@ class Item < ApplicationRecord
     end
   end
 
-  def liked_by?(user)
-    web_confirmations.where(user_id: user.id).exists?
-  end
+  # def liked_by?(user)
+  #   web_confirmations.where(user_id: user.id).exists?
+  #   local_confirmations.where(user_id: user.id).exists?
+  # end
 
 end
 

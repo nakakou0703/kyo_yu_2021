@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_093735) do
+ActiveRecord::Schema.define(version: 2021_04_01_080732) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2021_03_30_093735) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "local_confirmations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_local_comfirmations_on_item_id"
+    t.index ["user_id"], name: "index_local_comfirmations_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_03_30_093735) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
+  add_foreign_key "local_confirmations", "items"
+  add_foreign_key "local_confirmations", "users"
   add_foreign_key "web_confirmations", "items"
   add_foreign_key "web_confirmations", "users"
 end
