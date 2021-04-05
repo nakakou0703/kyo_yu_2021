@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+  before_action :item_find, only: [:show, :destroy, :edit, :update]
   
   def index
     @items = Item.all.order("created_at DESC").limit(8)
@@ -18,7 +20,6 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
     # @web_confirmation = WebConfirmation.where(params[:id])
     # @local_confirmation = LocalConfirmation.where(params[:id])
     @web_confirmations = WebConfirmation.where(item_id: params[:id])
@@ -26,18 +27,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    if @item.destroy
-      redirect_to root_path
-    end
+     @item.destroy
+    redirect_to root_path
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -48,12 +45,18 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
   end
+  
+
 
   private
 
   def item_params
      params.require(:item).permit(:name, :image, :text, :stock_id, :storage_location, :deployment, :arrival_day)
     #.merge(user_id: current_user.id)  を組み込むように変える
+  end
+
+  def item_find
+    @item = Item.find(params[:id])
   end
 
 end
