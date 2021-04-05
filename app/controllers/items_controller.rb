@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     # @web_confirmation = WebConfirmation.where(params[:id])
-    # @local_confirmation = LocalConfirmation.find(params[:id])
+    # @local_confirmation = LocalConfirmation.where(params[:id])
     @web_confirmations = WebConfirmation.where(item_id: params[:id])
     @local_confirmations = LocalConfirmation.where(item_id: params[:id])
   end
@@ -52,7 +52,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :image, :text, :stock_id, :storage_location, :deployment, :arrival_day).merge(user_id: current_user.id)
+     params.require(:item).permit(:name, :image, :text, :stock_id, :storage_location, :deployment, :arrival_day)
+    #.merge(user_id: current_user.id)  を組み込むように変える
   end
 
 end

@@ -1,11 +1,11 @@
 class Item < ApplicationRecord
 
-  belongs_to :user
-  has_one_attached :image
-  has_many :web_confirmations
-  has_many :users, through: :web_confirmations
-  has_many :local_confirmations
-  has_many :users, through: :local_confirmations
+  #belongs_to :user
+  has_one_attached :image, dependent: :destroy
+  has_many :web_confirmations, dependent: :destroy
+  has_many :users, through: :web_confirmations, dependent: :destroy
+  has_many :local_confirmations, dependent: :destroy
+  has_many :users, through: :local_confirmations, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :stock
   
@@ -26,7 +26,7 @@ class Item < ApplicationRecord
     end
   end
 
-  # def liked_by?(user)
+  # def confirmations_by?(user)
   #   web_confirmations.where(user_id: user.id).exists?
   #   local_confirmations.where(user_id: user.id).exists?
   # end

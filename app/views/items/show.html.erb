@@ -35,11 +35,11 @@
       <div class="confirmation_contents">
         <div class="button">
 
-          <%# if @web_confirmation.present? %>
-             <%# <div>・確認済</div> %>
-          <%# else %>
+          <% if @web_confirmation.present? %>
+             <div>・確認済</div>
+          <% else %>
             <%= link_to "・webで確認", item_web_confirmations_path(item_id: @item.id), method: :post, remote: true, id: @item.id, class: 'confirmation_button', id: "web_confirmed" %>
-          <%# end %>
+          <% end %>
           <span style="cursor: hand; cursor:pointer;">  <!--マウスポインターの変更-->
             <div id="web_confirmed_list">・確認者リスト</div>
           </span>

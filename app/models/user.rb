@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   validates :user_name, presence: true
 
-  has_many :items
-  has_many :web_confirmations
-  has_many :items, through: :web_confirmations
-  has_many :local_confirmations
-  has_many :items, through: :local_confirmations
+  #has_many :items
+  has_many :web_confirmations, dependent: :destroy
+  has_many :items_by_web, through: :web_confirmations, source: :item, dependent: :destroy
+  has_many :local_confirmations, dependent: :destroy
+  has_many :items_by_local, through: :local_confirmations, source: :item, dependent: :destroy
 
 end
