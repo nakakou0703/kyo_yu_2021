@@ -26,10 +26,5 @@ class Item < ApplicationRecord
     end
   end
 
-  # def confirmations_by?(user)
-  #   web_confirmations.where(user_id: user.id).exists?
-  #   local_confirmations.where(user_id: user.id).exists?
-  # end
-
 end
 
