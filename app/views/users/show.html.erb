@@ -8,7 +8,12 @@
     <div class="caution">退社する際に使う機能です。</div>
     <div class="caution">それ以外の人は戻るボタンをクリックしてください。</div>
     <div class="user_destroy_form">
-      <%= link_to "削除する", user_path(@user.id), method: :delete, class:"user_destroy" %>
+      <%= link_to user_path(@user.id), method: :delete, class:"user_destroy",data:
+       { confirm: '本当に削除しますか？',
+        cancel: 'やめる',
+        commit: '削除'}, title: '削除の確認' do %>
+        削除する
+      <% end %>
       <%=link_to 'トップページにもどる', root_path, class:"user_back_btn" %>
     </div>
   </div>
