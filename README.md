@@ -4,7 +4,6 @@
   |user_name          |string |null: false |
   |encrypted_password |string |null: false |
 ### Association
-  has_many :items
   has_many :web_confirmations
   has_many :local_confirmations
   has_many :shift_hopes
@@ -14,13 +13,11 @@
   |-----------------|-----------|-----------------|
   |name             |string     |null: false      |
   |text             |text       |null: false      |
-  |user             |references |foreign_key: true|
   |stock_id         |integer    |null: false      |
   |storage_location |string
   |deployment       |string     |null: false      |
-  |arrival_day      |integer    |null: false      |
+  |arrival_day      |date       |null: false      |
 ### Association
-  belongs_to :user
   has_many :web_confirmations
   has_many :local_confirmations
 
@@ -41,12 +38,3 @@
 ## Association
   belongs_to :user
   belongs_to :item
-
-## shift_hopesテーブル
-  |Column    |Type       |Options          |
-  |----------|-----------|-----------------|
-  |hope_day  |string     |null: false      |
-  |hope_time |integer    |null: false      |
-  |user      |references |foreign_key: true|
-## Association
-  belong_to :user
