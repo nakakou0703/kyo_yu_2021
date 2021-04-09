@@ -1,0 +1,12 @@
+.error-message{
+  color: red;
+}
+
+
+//スマホ表示時
+@media (max-width: 599px) {
+
+  .error-message{
+    font-size: 12px;
+  }
+}
