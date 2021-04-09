@@ -36,14 +36,12 @@ ActiveRecord::Schema.define(version: 2021_04_01_080732) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "text", null: false
-    t.bigint "user_id"
     t.integer "stock_id", null: false
     t.string "storage_location"
     t.string "deployment", null: false
     t.date "arrival_day", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "local_confirmations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,7 +76,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_080732) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "items", "users"
   add_foreign_key "local_confirmations", "items"
   add_foreign_key "local_confirmations", "users"
   add_foreign_key "web_confirmations", "items"
