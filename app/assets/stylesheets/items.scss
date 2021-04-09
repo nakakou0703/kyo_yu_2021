@@ -88,9 +88,9 @@ h4{
 }
 
 .page-head{
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 900;
-  margin: 10px 5px 0px 0px;
+  margin: 2% 0% 0% 1.5%;
 }
 
 .search_form {
@@ -151,7 +151,7 @@ h4{
   height: 200px;
 }
 
-.calendar{
+.calendar_room{
   height: 600px;
   background-image: url("/images/calender_back.png");
   display: flex;
@@ -160,22 +160,29 @@ h4{
   position: relative;
 }
 
-.calender_image{
-  width: 90%;
-  height: 500px;
-}
-
 .shift_hopes{
   font-size: 30px;
   font-weight: 900;
+  position: absolute;
+  top: 2%;
+  left: 2%;
 }
 
-.shift_text{
-  text-decoration : underline red;
+.shift_caution{
+  font-size: 15px;
+  text-decoration : 3px underline red;
+  text-align: center;
   position: absolute;
-  top: 35px;
-  left: 40%;
+  top: 4%;
 }
+
+.googleCalender{
+  text-align: center;
+  position: absolute;
+  top: 10%;
+}
+  
+
 
 //スマホ表示時
 @media (max-width: 599px) {
@@ -274,28 +281,45 @@ h4{
     width: calc((100% - 10px) / 4);
   }
 
-  .calendar{
-    height: 400px;
+  .calendar_room{
+    height: 570px;
+  }
+
+  .shift_text{
+    height: 30px;
+    width: 100%;
   }
 
   .shift_hopes{
     font-size: 20px;
     font-weight: 700;
     position: absolute;
-    top: 5px;
+    top: 1px;
     left: 30%;
   }
 
-  .shift_text{
+  .shift_caution{
+    text-align: center;
     text-decoration : underline red;
     position: absolute;
     top: 30px;
-    left: 50px;
   }
 
-  .calender_image{
-    width: 90%;
-    height: 280px;
+  .hope_content{
+    margin-top: 15%;
+    margin-left: 5%;
+  }
+
+  .shift_input_button{
+    padding: 3px 50px;
+    margin-top: 2%;
+    margin-left: 4.5%;
+  }
+
+  .googleCalender iframe {
+    width:100%;
+    max-width:800px;
+    height:450px;
   }
 
 }
