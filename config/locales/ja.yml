@@ -5,6 +5,6 @@ ja:
        image: 画像
        name: 名前
        text: 商品の説明
-       deployment: 展開場所（陳列した場所）
+       deployment: 展開場所
        arrival_day: 入荷日
        stock_id: 在庫の有無
