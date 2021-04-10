@@ -66,3 +66,4 @@ gem 'jquery-rails'
 gem 'data-confirm-modal'
 gem 'mimemagic'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
