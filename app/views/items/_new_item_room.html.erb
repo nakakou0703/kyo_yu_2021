@@ -1,27 +1,27 @@
 <div class="new_item_room">
   <div class="inner">
-    <% if user_signed_in? %>
-      <div class="page-head">新入荷商品</div>
-      <%= form_with(url: search_items_path, local: true, method: :get, class: "search_form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search_input" %>
-        <%= form.submit "検索", class: "search_button" %>
-      <% end %>
-      <%= link_to "新商品登録", new_item_path, class: "new_item_btn" %>
-      <div class="new_item_wrapper">
-        <% @items.each do |item| %>
-          <div class="new_item">
-            <div class="arrival_day" >
-              <%= item.arrival_day %>
-            </div>
-            <%= link_to item_path(item.id) do %>
-              <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
-              <div class="new_item_name">
-                <%= item.name %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+    <div class="page-head">新入荷商品</div>
+    <%= form_with(url: search_items_path, local: true, method: :get, class: "search_form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search_input" %>
+      <%= form.submit "検索", class: "search_button" %>
     <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "新商品登録", new_item_path, class: "new_item_btn" %>
+    <% end %>
+    <div class="new_item_wrapper">
+      <% @items.each do |item| %>
+        <div class="new_item">
+          <div class="arrival_day" >
+            <%= item.arrival_day %>
+          </div>
+          <%= link_to item_path(item.id) do %>
+            <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+            <div class="new_item_name">
+              <%= item.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
