@@ -20,9 +20,10 @@ class Item < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Item.where('name LIKE(?) or text LIKE(?) or arrival_day LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+      Item.where('name LIKE(?)', "%#{search}%")
+      Item.where("arrival_day LIKE(?)", "%#{search}%")
     else
-      Item.all.order("created_at DESC").limit(10)
+      Item.all.order("arrival_day DESC").limit(10)
     end
   end
 
