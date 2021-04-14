@@ -10,7 +10,7 @@
   text-align: center;
   margin: 20px 0px;
   background-color: #FFF;
-  width: 70%;
+  width: 80%;
   height: 90%;
   padding: 5vh 15vw;
 }
@@ -43,6 +43,15 @@
 
 //スマホ表示時
 @media (max-width: 599px) {
+
+  .search_item_room2{
+    text-align: center;
+    margin: 20px 0px;
+    background-color: #FFF;
+    width: 85%;
+    height: 90%;
+    padding: 5vh 10vw;
+  }
 
   .search_item_input{
     height: 30px;
