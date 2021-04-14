@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_080732) do
     t.integer "stock_id", null: false
     t.string "storage_location"
     t.string "deployment", null: false
-    t.date "arrival_day", null: false
+    t.string "arrival_day", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
