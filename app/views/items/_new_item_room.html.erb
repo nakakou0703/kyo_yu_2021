@@ -8,20 +8,77 @@
     <% if user_signed_in? %>
       <%= link_to "新商品登録", new_item_path, class: "new_item_btn" %>
     <% end %>
-    <div class="new_item_wrapper">
-      <% @items.each do |item| %>
-        <div class="new_item">
-          <div class="arrival_day" >
-            <%= item.arrival_day %>
-          </div>
-          <%= link_to item_path(item.id) do %>
-            <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
-            <div class="new_item_name">
-              <%= item.name %>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <% @items1.each do |item| %>
+            <div class="new_item">
+              <div class="arrival_day" >
+                <%= item.arrival_day %>
+              </div>
+              <%= link_to item_path(item.id) do %>
+                <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+                <div class="new_item_name">
+                  <%= item.name %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
-      <% end %>
+        <% if @items2.present?%>
+          <div class="swiper-slide">
+            <% @items2.each do |item| %>
+              <div class="new_item">
+                <div class="arrival_day" >
+                  <%= item.arrival_day %>
+                </div>
+                <%= link_to item_path(item.id) do %>
+                  <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+                  <div class="new_item_name">
+                    <%= item.name %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <% if @items3.present?%>
+          <div class="swiper-slide">
+            <% @items3.each do |item| %>
+              <div class="new_item">
+                <div class="arrival_day" >
+                  <%= item.arrival_day %>
+                </div>
+                <%= link_to item_path(item.id) do %>
+                  <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+                  <div class="new_item_name">
+                    <%= item.name %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <% if @items4.present?%>
+          <div class="swiper-slide">
+            <% @items4.each do |item| %>
+              <div class="new_item">
+                <div class="arrival_day" >
+                  <%= item.arrival_day %>
+                </div>
+                <%= link_to item_path(item.id) do %>
+                  <%=  image_tag item.image, class: 'new_item_image' if item.image.attached? %>
+                  <div class="new_item_name">
+                    <%= item.name %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
 </div>
+

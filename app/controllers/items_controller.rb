@@ -3,7 +3,10 @@ class ItemsController < ApplicationController
   before_action :item_find, only: [:show, :destroy, :edit, :update]
   
   def index
-    @items = Item.all.order("arrival_day DESC").limit(8)
+    @items1 = Item.all.order("arrival_day DESC").limit(8)
+    @items2 = Item.all.order("arrival_day DESC").limit(16).drop(8)
+    @items3 = Item.all.order("arrival_day DESC").limit(24).drop(16)
+    @items4 = Item.all.order("arrival_day DESC").limit(32).drop(24)
   end
 
   def new
@@ -43,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).order("arrival_day DESC")
   end
   
 
