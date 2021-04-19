@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //以下トップページ
+body{
+  margin: 0px;
+}
+
 .header{
   background-image: url("/images/header.png");
   height: 160px;
